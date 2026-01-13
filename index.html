@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Freelance Marketer CMS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+    <div class="container">
+        <div class="login-card">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <h1>Marketer CMS</h1>
+                <p class="subtitle">Free CRM for Freelance Marketers</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> Email
+                    </label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <button type="button" id="showRegister" class="btn btn-secondary btn-block">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </div>
+            </form>
+            
+            <form id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <label for="regEmail">
+                        <i class="fas fa-envelope"></i> Email
+                    </label>
+                    <input type="email" id="regEmail" required placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPassword">
+                        <i class="fas fa-lock"></i> Password (min. 6 characters)
+                    </label>
+                    <input type="password" id="regPassword" required minlength="6" placeholder="••••••••">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <input type="password" id="confirmPassword" required minlength="6" placeholder="••••••••">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                    <button type="button" id="showLogin" class="btn btn-secondary btn-block">
+                        <i class="fas fa-sign-in-alt"></i> Back to Login
+                    </button>
+                </div>
+            </form>
+            
+            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Processing...</p>
+            </div>
+            
+            <div id="message" class="message"></div>
+            
+            <div class="demo-credentials">
+                <p><strong>Demo Account:</strong> demo@marketer.com / demopass123</p>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>

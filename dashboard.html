@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Freelance Marketer CMS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <a href="dashboard.html" class="navbar-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>Marketer CMS</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="dashboard.html" class="active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a></li>
+                <li><a href="leads.html">
+                    <i class="fas fa-users"></i> Leads
+                </a></li>
+                <li><a href="reminders.html">
+                    <i class="fas fa-bell"></i> Reminders
+                </a></li>
+            </ul>
+            
+            <div class="navbar-user">
+                <div class="user-avatar" id="userAvatar">JD</div>
+                <span id="userEmail">user@example.com</span>
+                <button id="logoutBtn" class="btn btn-outline btn-sm">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                <div class="dark-mode-toggle">
+                    <input type="checkbox" id="darkModeToggle" class="toggle">
+                    <label for="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-section mb-4">
+                <h1>Welcome back, <span id="userName">Marketer</span>!</h1>
+                <p>Here's what's happening with your business today.</p>
+            </div>
+            
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Leads</h3>
+                    <div class="number" id="totalLeads">0</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12% this month</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Active Leads</h3>
+                    <div class="number" id="activeLeads">0</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8% this month</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Upcoming Reminders</h3>
+                    <div class="number" id="upcomingReminders">0</div>
+                    <div class="trend">
+                        <i class="fas fa-bell"></i>
+                        <span>Next: Today</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Conversion Rate</h3>
+                    <div class="number" id="conversionRate">0%</div>
+                    <div class="trend down">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>2% this month</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h2>Quick Actions</h2>
+                </div>
+                <div class="card-body">
+                    <div class="quick-actions">
+                        <a href="leads.html" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i> Add New Lead
+                        </a>
+                        <a href="reminders.html" class="btn btn-success">
+                            <i class="fas fa-bell"></i> Set Reminder
+                        </a>
+                        <button id="importLeads" class="btn btn-outline">
+                            <i class="fas fa-file-import"></i> Import Leads
+                        </button>
+                        <button id="exportData" class="btn btn-outline">
+                            <i class="fas fa-file-export"></i> Export Data
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Leads & Reminders -->
+            <div class="two-column-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Recent Leads</h2>
+                        <a href="leads.html" class="btn btn-sm btn-outline">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" id="recentLeadsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Date Added</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentLeadsBody">
+                                    <!-- Leads will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Upcoming Reminders</h2>
+                        <a href="reminders.html" class="btn btn-sm btn-outline">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="reminder-list" id="dashboardReminders">
+                            <!-- Reminders will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity Chart -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h2>Monthly Activity</h2>
+                </div>
+                <div class="card-body">
+                    <div class="activity-chart" id="activityChart">
+                        <p class="text-center">Activity chart will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/route-guard.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
