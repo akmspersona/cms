@@ -3,12 +3,12 @@
 
 // Your Firebase configuration (REPLACE WITH YOURS)
 const firebaseConfig = {
-    apiKey: "AIzaSyBp6oZ6FjC9kLx7k8t9pQqRstUvWXyZabc",
-    authDomain: "freelance-cms-12345.firebaseapp.com",
-    projectId: "freelance-cms-12345",
-    storageBucket: "freelance-cms-12345.appspot.com",
-    messagingSenderId: "987654321098",
-    appId: "1:987654321098:web:abcdef1234567890"
+  apiKey: "AIzaSyC6WfTFTfPIBwF8ChfWoL6w4gBLirSyIs8",
+  authDomain: "freelance-cms-akms.firebaseapp.com",
+  projectId: "freelance-cms-akms",
+  storageBucket: "freelance-cms-akms.firebasestorage.app",
+  messagingSenderId: "680498811198",
+  appId: "1:680498811198:web:a2d0f87de2eed8a7f1dc6f"
 };
 
 // Initialize Firebase
